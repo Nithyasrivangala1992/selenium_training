@@ -1,0 +1,15 @@
+import time
+from selenium import webdriver
+opts = webdriver.ChromeOptions()
+opts.add_experimental_option("detach",True)
+driver = webdriver.Chrome(opts)
+driver.get('https://www.facebook.com/')
+time .sleep(2)
+driver.find_element("link text","Create new account").click()
+driver.find_element("name","firstname").send_keys('Manhita')
+driver.find_element("name","lastname").send_keys('vangala')
+driver.find_element("class name","_8esa").click()
+driver.find_element("id","password_step_input").send_keys('Nithya123')
+time.sleep(2)
+driver.find_element("link text","Sign.Up").click()
+time.sleep(3)

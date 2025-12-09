@@ -1,0 +1,20 @@
+import time
+from selenium import webdriver
+opts = webdriver.ChromeOptions()
+opts.add_experimental_option("detach",True)
+driver = webdriver.Chrome()
+driver.get('https://testautomationpractice.blogspot.com/')
+time.sleep(2)
+driver.find_element('id','name').send_keys('Nithya sri')
+time.sleep(1)
+driver.find_element('id','email').send_keys('Nithya@123')
+time.sleep(1)
+driver.find_element('id','phone').send_keys('9908431679')
+time.sleep(1)
+driver.find_element('id','textarea').send_keys('Nizamabad')
+time.sleep(1)
+driver.find_element('id','female').click()
+time.sleep(1)
+driver.find_element('id','wednesday').click()
+time.sleep(1)
+
