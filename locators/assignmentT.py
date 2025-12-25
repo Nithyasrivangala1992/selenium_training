@@ -31,18 +31,18 @@
 
 import time
 from selenium import webdriver
-
 opts = webdriver.ChromeOptions()
 opts.add_experimental_option("detach",True)
 driver = webdriver.Chrome(opts)
 driver.get('https://www.zomato.com/nizamabad')
 time.sleep(2)
-driver.find_element("xpath",'//p[text()="Pizza - Delivery"]').send_keys('Pizza.-.Delivery')
+driver.find_element('xpath', '//p[text()="Pizza"]').click()
 time.sleep(2)
-
-driver.find_element("xpath",'//p[text()="Pizza.-.Delivery"]').click()
-driver.find_element("xpath",'//h4[@class="sc-1hp8d8a-0.sc-Ehqfj.bxOQva"]').click()
-time.sleep(2)
+driver.find_element("xpath",'//h4[text()="Pizza Hut"]').click()
+restaurants = driver.find_elements('xpath',"//h4[contains(@class, 'sc-dZQrDN') and contains(@class, 'drOzEM') and contains(@class, 'title')]")
+for ele in restaurants:
+    print("-", ele.text)
+  #  print(ele.text)
 
 
 # import time
