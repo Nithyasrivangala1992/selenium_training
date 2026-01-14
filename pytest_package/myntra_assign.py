@@ -1,0 +1,20 @@
+import time
+from selenium import webdriver
+opts = webdriver.ChromeOptions()
+opts.add_experimental_option("detach",True)
+driver = webdriver.Chrome(opts)
+driver.get('https://www.myntra.com')
+time.sleep(2)
+driver.find_element('xpath','//a[text()="Women"]').click()
+time.sleep(2)
+driver.find_element('xpath','//a[text()="Kurtas & Suits"]').click()
+time.sleep(2)
+driver.find_element('xpath','//input[@class="desktop-searchBar"]').send_keys('Aline Kurta Set')
+time.sleep(2)
+driver.find_element('xpath','//li[text()="Aline Kurta Set"]').click()
+time.sleep(2)
+driver.find_element('xpath','//label[text()="Price: High to Low"]').click()
+time.sleep(2)
+driver.find_element('xpath','//h3[text()="SHASHA GABA"]').click()
+time.sleep(2)
+
